@@ -3,7 +3,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  //margin-bottom: 25px;
+  //margin-bottom: 25px; //
 
   // Snez added
   align-items: center;
@@ -11,9 +11,7 @@
   .logo-container {
     height: 100%;
     width: 70px;
-    //padding: 25px;
-    // Snez added
-    padding-left: 80px;
+    //padding: 25px; //
 
     // snez added
     display: flex;
@@ -29,6 +27,7 @@
 
     .option {
       padding: 10px 15px;
+      cursor: pointer;
     }
   }
 }
