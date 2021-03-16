@@ -27,12 +27,6 @@ const CollectionItem = ({item, addItem }) => {
     )
 };
 
-// not sure if I need this
-/*
-const mapStateToProps = ({ cartItems }) => ({
-    cartItems
-});*/
-
 const mapDispatchToProps = dispatch => ({
     addItem: item => dispatch(addItem(item))
 });
