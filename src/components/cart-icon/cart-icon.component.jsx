@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 
 import { toggleCartHidden } from '../../redux/cart/cart.actions';
 import { selectCartItemsCount } from '../../redux/cart/cart.selectors.js';
@@ -23,8 +24,15 @@ const mapDispatchToProps = dispatch => ({
     itemCount: cartItems.reduce((accum, item) => (accum + item.quantity), 0 )
 });*/
 
-const mapStateToProps =  state => ({
+// Note: itemCount is a primitive (integer) and redux will do a shallow check and detect that there was no state changes between current and next state and will NOT rerender icon component. It is still good to keep the code (it still saves rerendering for cart dropdown component)
+
+// replacing with structured selector
+/*const mapStateToProps =  state => ({
     itemCount: selectCartItemsCount(state)
+});*/
+
+const mapStateToProps =  createStructuredSelector ({
+    itemCount: selectCartItemsCount
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartIcon);
