@@ -11,5 +11,15 @@
   .preview {
     display: flex;
     justify-content: space-between;
+
+    // Snez added
+    .collection-item {
+      margin-right: 10px;
+    }
+
+    // and this
+    .collection-item:last-child {
+      margin-right: 0;
+    }
   }
 }
